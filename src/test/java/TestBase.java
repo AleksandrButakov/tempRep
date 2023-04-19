@@ -19,36 +19,25 @@ public class TestBase {
 
     @BeforeAll
     static void beforeAll() throws MalformedURLException {
-//        SelenideLogger.addListener("AllureSelenide", new AllureSelenide());
-//
-//        baseUrl = "https://rshb.ru";
-//        Configuration.browserPosition = ("0x0");
-//        Configuration.browserSize = "1920x1080";
+        SelenideLogger.addListener("AllureSelenide", new AllureSelenide());
+
+        baseUrl = "https://rshb.ru";
+        Configuration.browserPosition = ("0x0");
+        Configuration.browserSize = "1920x1080";
 
         //password and user for remote browser
-//        String user = System.getProperty("user");
-//        String password = System.getProperty("password");
-//        Configuration.remote = "https://" + user + ":" + password + "@" + System.getProperty("remoteBrowser");
+        String user = System.getProperty("user");
+        String password = System.getProperty("password");
+        //Configuration.remote = "https://" + user + ":" + password + "@" + System.getProperty("remoteBrowser");
+        Configuration.remote = System.getProperty("remote_driver_url", "http://62.113.108.218:4444/wd/hub/");
 
          /* Jenkins не имеет графического интерфейса поэтому для тестирования web интерфейса необходимо
            подключить selenoid
          */
-//        DesiredCapabilities capabilities = new DesiredCapabilities();
-//        capabilities.setCapability("enableVNC", true);
-//        capabilities.setCapability("enableVideo", true);
-//        Configuration.browserCapabilities = capabilities;
-
-        SelenideLogger.addListener("AllureSelenide", new AllureSelenide());
-
-        //Configuration.startMaximized = true;
-        baseUrl = "https://rshb.ru";
         DesiredCapabilities capabilities = new DesiredCapabilities();
-
         capabilities.setCapability("enableVNC", true);
-
+        capabilities.setCapability("enableVideo", true);
         Configuration.browserCapabilities = capabilities;
-//        Configuration.remote = "https://user1:1234@selenoid.autotests.cloud/wd/hub/";
-        Configuration.remote = System.getProperty("remote_driver_url", "http://62.113.108.218:4444/wd/hub/");
 
     }
 
