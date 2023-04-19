@@ -41,7 +41,7 @@ public class TestBase {
         SelenideLogger.addListener("AllureSelenide", new AllureSelenide());
 
         //Configuration.startMaximized = true;
-
+        baseUrl = "https://rshb.ru";
         DesiredCapabilities capabilities = new DesiredCapabilities();
 
         capabilities.setCapability("enableVNC", true);
@@ -63,7 +63,10 @@ public class TestBase {
         Attach.screenshotAs("Last screenshot");
         Attach.pageSource();
         Attach.browserConsoleLogs();
+        Attach.addVideo();
         closeWebDriver();
+
+
 
 //        Attach.screenshotAs("Last screenshot");
 //        Attach.pageSource();
