@@ -29,15 +29,16 @@ public class TestBase {
         //String user = System.getProperty("user");
         //String password = System.getProperty("password");
         //Configuration.remote = "https://" + user + ":" + password + "@" + System.getProperty("remoteBrowser");
+        DesiredCapabilities capabilities = new DesiredCapabilities();
+        capabilities.setCapability("enableVNC", true);
+        // capabilities.setCapability("enableVideo", true);
+        Configuration.browserCapabilities = capabilities;
+
         Configuration.remote = System.getProperty("remote_driver_url", "http://62.113.108.218:4444/wd/hub/");
 
          /* Jenkins не имеет графического интерфейса поэтому для тестирования web интерфейса необходимо
            подключить selenoid
          */
-        DesiredCapabilities capabilities = new DesiredCapabilities();
-        capabilities.setCapability("enableVNC", true);
-        capabilities.setCapability("enableVideo", true);
-        Configuration.browserCapabilities = capabilities;
 
     }
 
@@ -56,7 +57,6 @@ public class TestBase {
         closeWebDriver();
 
 
-
 //        Attach.screenshotAs("Last screenshot");
 //        Attach.pageSource();
 //        Attach.browserConsoleLogs();
@@ -64,8 +64,8 @@ public class TestBase {
 //        closeWebDriver();
     }
 
-//    public static String getSessionId(){
-//        return ((RemoteWebDriver) getWebDriver()).getSessionId().toString();
-//    }
+    public static String getSessionId(){
+        return ((RemoteWebDriver) getWebDriver()).getSessionId().toString();
+    }
 
 }
