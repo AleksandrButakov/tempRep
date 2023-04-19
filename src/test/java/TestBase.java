@@ -63,7 +63,7 @@ public class TestBase {
         Attach.screenshotAs("Last screenshot");
         Attach.pageSource();
         Attach.browserConsoleLogs();
-        Attach.addVideo();
+        // Attach.addVideo();
         closeWebDriver();
 
 
@@ -75,8 +75,8 @@ public class TestBase {
 //        closeWebDriver();
     }
 
-    public static String getSessionId(){
-        return ((RemoteWebDriver) getWebDriver()).getSessionId().toString();
-    }
+//    public static String getSessionId(){
+//        return ((RemoteWebDriver) getWebDriver()).getSessionId().toString();
+//    }
 
 }
