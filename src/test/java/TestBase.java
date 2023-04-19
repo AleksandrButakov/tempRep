@@ -26,8 +26,8 @@ public class TestBase {
         Configuration.browserSize = "1920x1080";
 
         //password and user for remote browser
-        String user = System.getProperty("user");
-        String password = System.getProperty("password");
+        //String user = System.getProperty("user");
+        //String password = System.getProperty("password");
         //Configuration.remote = "https://" + user + ":" + password + "@" + System.getProperty("remoteBrowser");
         Configuration.remote = System.getProperty("remote_driver_url", "http://62.113.108.218:4444/wd/hub/");
 
