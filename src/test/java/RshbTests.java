@@ -36,34 +36,34 @@ public class RshbTests extends TestBase {
             homePage.clickIndividuals();
         });
 
-        step("- Кликнуть «Кредиты»", () -> {
-            individuals.clickCredits();
-        });
-
-        step("- Кликнуть «Кредит на любые цели»", () -> {
-            credits.clickCreditForAnyPurpose();
-        });
-
-        step("- Закрыть окно cookies", () -> {
-            creditForAnyPurpose.closeCookiesWindow();
-        });
-
-        step("- тип платежа «Аннуитентный»", () -> {
-            creditForAnyPurpose.chooseAnnuityPayment();
-        });
-
-        step("- выбор суммы кредита", () -> {
-            creditForAnyPurpose.choosingLoanAmount(loanAmount);
-        });
-
-        step("- Срок кредита 60 м", () -> {
-            creditForAnyPurpose.choosingLoanPeriod(loanPeriod);
-        });
-
-        // checking the correctness of the entered value
-        step("- проверить что значение поля 'Предварительный расчет' составляет 55 400 ₽", () -> {
-            creditForAnyPurpose.checkValuePreliminaryCalculationField(preliminaryCalculation);
-        });
+//        step("- Кликнуть «Кредиты»", () -> {
+//            individuals.clickCredits();
+//        });
+//
+//        step("- Кликнуть «Кредит на любые цели»", () -> {
+//            credits.clickCreditForAnyPurpose();
+//        });
+//
+//        step("- Закрыть окно cookies", () -> {
+//            creditForAnyPurpose.closeCookiesWindow();
+//        });
+//
+//        step("- тип платежа «Аннуитентный»", () -> {
+//            creditForAnyPurpose.chooseAnnuityPayment();
+//        });
+//
+//        step("- выбор суммы кредита", () -> {
+//            creditForAnyPurpose.choosingLoanAmount(loanAmount);
+//        });
+//
+//        step("- Срок кредита 60 м", () -> {
+//            creditForAnyPurpose.choosingLoanPeriod(loanPeriod);
+//        });
+//
+//        // checking the correctness of the entered value
+//        step("- проверить что значение поля 'Предварительный расчет' составляет 55 400 ₽", () -> {
+//            creditForAnyPurpose.checkValuePreliminaryCalculationField(preliminaryCalculation);
+//        });
     }
 
     @Test

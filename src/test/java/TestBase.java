@@ -30,8 +30,10 @@ public class TestBase {
         //String password = System.getProperty("password");
         //Configuration.remote = "https://" + user + ":" + password + "@" + System.getProperty("remoteBrowser");
         DesiredCapabilities capabilities = new DesiredCapabilities();
+
         capabilities.setCapability("enableVNC", true);
-        // capabilities.setCapability("enableVideo", true);
+        capabilities.setCapability("enableVideo", true);
+
         Configuration.browserCapabilities = capabilities;
 
         Configuration.remote = System.getProperty("remote_driver_url", "http://62.113.108.218:4444/wd/hub/");
